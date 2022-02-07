@@ -1,4 +1,5 @@
 import os
+import time
 
 from django.test import LiveServerTestCase
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
@@ -8,15 +9,13 @@ from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 
-import time
-
 MAX_WAIT = 10
 
 class NewVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.firefox_options = Options()
-        self.firefox_options.headless = True
+        # self.firefox_options.headless = True
         self.browser = webdriver.Firefox(options=self.firefox_options)
         staging_server = os.environ.get('STAGING_SERVER')
         if staging_server:
