@@ -26,7 +26,7 @@ SECRET_KEY = 'r=2sxs8grhvy_7k07ib5oxi*7+j8f%t@cgqb*ec)buxg2z6*56'
 DEBUG = True
 
 ALLOWED_HOSTS = ['ec2-35-176-15-199.eu-west-2.compute.amazonaws.com',
-        '.khominhvi.com']
+        '.khominhvi.com', 'localhost']
 
 
 # Application definition
