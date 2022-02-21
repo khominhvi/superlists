@@ -25,7 +25,8 @@ def _get_latest_source():
 
 def _update_venv():
     if not exists('venv/bin/pip'):
-        run(f'python3 -m venv venv')
+        run('python3 -m venv venv')
+        run('./venv/bin/python3 -m pip install --upgrade pip')
     run('./venv/bin/pip install -r requirements.txt')
 
 def _create_or_update_dotenv():
