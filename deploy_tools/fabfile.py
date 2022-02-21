@@ -3,7 +3,7 @@ import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
 
-REPO_URL = 'https://github.com/khominhvi/book-example.git'
+REPO_URL = 'https://github.com/khominhvi/superlists.git'
 
 def deploy():
     site_folder = f'/home/{env.user}/sites/{env.host}'
@@ -39,7 +39,7 @@ def _create_or_update_dotenv():
         append('.env', f'DJANGO_SECRET_KEY={new_secret}')
 
 def _update_static_files():
-    run('./virtualenv/bin/python manage.py collectstatic --noinput')
+    run('./venv/bin/python manage.py collectstatic --noinput')
 
 def _update_databases():
-    run('./virtualenv/bin/python manage.py migrate --noinput')
+    run('./venv/bin/python manage.py migrate --noinput')
